@@ -1,4 +1,11 @@
-﻿Function Pkcs10CertEnroll {
+﻿### Enroll a new certificate via a previously created CSR
+
+### DIRECTIONS:
+### 1) See sample call at bottom of file
+### 2) To add meta data, uncomment/add the necessary MetaField Name/Value pairs in the "param" section as well as 
+###    in the "metadataList" section.
+
+Function Pkcs10CertEnroll {
     [cmdletBinding()]
 
     param(
