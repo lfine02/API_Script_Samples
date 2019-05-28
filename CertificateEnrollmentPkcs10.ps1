@@ -1,4 +1,4 @@
-﻿### Enroll a new certificate via a previously created CSR
+﻿#### Enroll a new certificate via a previously created CSR
 
 ### DIRECTIONS:
 ### 1) See sample call at bottom of file
