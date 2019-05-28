@@ -31,7 +31,7 @@ Function Pkcs10CertEnroll {
 
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
     $headers.Add('authorization', "Basic $encodedCredentials")
-    $headers.Add('x-css-cms-appkey', (Convert-HexStringToBase64String -hexString $ApiKey))
+    $headers.Add('x-css-cms-appkey', $encodedAPIKey)
     $headers.Add('content-type', 'application/json')
 
     $body = @{
@@ -86,11 +86,12 @@ Function HexEncodeBase64
 
 
 ### Example Call ###
-$pkcs10Certificate = @"
-        {PKCS10_CERTIFICATE}
-"@
-Pkcs10CertEnroll -BaseURL '{BASE_URL}' -UserName '{USER_NAME}' -Password '{PASSWORD}' `
-    -APIKey '{KF_API_KEY' -TemplateName '{CERTIFICATE_TEMPLATE}' -Pkcs10Certificate $pkcs10Certificate
+
+#$pkcs10Certificate = "
+#    {PKCS10_CERTIFICATE}
+#"
+#Pkcs10CertEnroll -BaseURL '{BASE_URL}' -UserName '{USER_NAME}' -Password '{PASSWORD}' `
+#    -APIKey '{KF_API_KEY' -TemplateName '{CERTIFICATE_TEMPLATE}' -Pkcs10Certificate $pkcs10Certificate
 
 #{BASE_URL} - Base URL of your Keyfactor implementation - i.e. "https://your.domain"
 #{USER_NAME} - AD with authority to execute Keyfactor APIs, domain included - i.e. "domain\user-name"
